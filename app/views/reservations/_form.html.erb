@@ -32,6 +32,14 @@
   </div>
 
   <div>
+    <%# When I try to create a new reservation, I get this error
+     1 error 
+     prohibited this reservation from being saved: Table must exist %>
+    <%= form.label :table_id %>
+    <%= form.collection_select :table_id, Table.all, :id, :name %>
+  </div>
+
+  <div>
     <%= form.submit %>
   </div>
 <% end %>
