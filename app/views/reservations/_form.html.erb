@@ -37,6 +37,11 @@
   </div>
 
   <div>
+    <%= form.label :party_number, style: "display: block" %>
+    <%= form.number_field :party_number %>
+  </div>
+
+  <div>
     <%= form.label :table_id %>
     <%= form.collection_select :table_id, Table.all, :id, :name %>
   </div>

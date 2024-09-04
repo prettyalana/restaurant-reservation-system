@@ -20,7 +20,7 @@ task :sample_data => :environment do
       description = "Party of #{party_number}"
     end
     date = Faker::Date.between(from: 2.days.ago, to: Date.today)
-    start_time = Faker::Time.between_dates(from: Date.today - 1, to: Date.today, period: :evening)
+    start_time = Faker::Time.between_dates(from: Date.today - 1, to: Date.today)
     end_time = start_time + 1.hour
     table = Table.order('RANDOM()').first
     Reservation.create(
@@ -30,6 +30,7 @@ task :sample_data => :environment do
       start_time: start_time,
       end_time: end_time,
       table: table,
+      party_number: party_number
     )
   end
 
