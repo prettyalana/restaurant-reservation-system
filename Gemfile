@@ -71,8 +71,8 @@ group :test do
   gem "webdrivers"
 end
 
+gem 'rake-notes', '~> 0.2.2'
 gem "awesome_print"
-gem "dotenv-rails"
 gem "faker"
 gem "htmlbeautifier"
 gem "http"

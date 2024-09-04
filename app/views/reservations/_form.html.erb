@@ -27,8 +27,23 @@
   </div>
 
   <div>
-    <%= form.label :time, style: "display: block" %>
-    <%= form.time_field :time %>
+    <%= form.label :start_time, style: "display: block" %>
+    <%= form.time_field :start_time %>
+  </div>
+
+  <div>
+    <%= form.label :end_time, style: "display: block" %>
+    <%= form.time_field :end_time %>
+  </div>
+
+  <div>
+    <%= form.label :party_size, style: "display: block" %>
+    <%= form.number_field :party_size %>
+  </div>
+
+  <div>
+    <%= form.label :table_id %>
+    <%= form.collection_select :table_id, Table.all, :id, :name %>
   </div>
 
   <div>

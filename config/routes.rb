@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   resources :restaurants
   resources :reservations
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
@@ -8,5 +9,8 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
   # Defines the root path route ("/")
-  # root "posts#index"
+  root "reservations#index"
+
+  # get "/home" => "home#show"
+  # get "/:username" => "users#show", as: :user
 end
