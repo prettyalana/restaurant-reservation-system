@@ -13,11 +13,11 @@ task :sample_data => :environment do
 
   12.times do
     name = Faker::Name.name.capitalize
-    party_number = rand(1..20)
-    if party_number <= 2
-      description = "Seating for #{party_number}"
+    party_size = rand(1..20)
+    if party_size <= 2
+      description = "Seating for #{party_size}"
     else
-      description = "Party of #{party_number}"
+      description = "Party of #{party_size}"
     end
     date = Faker::Date.between(from: 2.days.ago, to: Date.today)
     start_time = Faker::Time.between_dates(from: Date.today - 1, to: Date.today)
@@ -30,7 +30,7 @@ task :sample_data => :environment do
       start_time: start_time,
       end_time: end_time,
       table: table,
-      party_number: party_number
+      party_size: party_size
     )
   end
 
