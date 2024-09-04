@@ -8,7 +8,7 @@ task :sample_data => :environment do
   end
 
   10.times do |i|
-    Table.create(name: "Table #{i + 1}")
+    Table.create(seats: rand(2..8), name: "Table #{i + 1}")
   end
 
   12.times do
