@@ -2,6 +2,10 @@ source "https://rubygems.org"
 
 ruby "3.2.1"
 
+gem "simple_form"
+
+gem "pg", "~> 1.1"
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.1.3", ">= 7.1.3.3"
 
@@ -64,4 +68,30 @@ group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
   gem "selenium-webdriver"
+  gem "webdrivers"
+end
+
+gem "awesome_print"
+gem "dotenv-rails"
+gem "faker"
+gem "htmlbeautifier"
+gem "http"
+gem "table_print"
+
+group :development do
+  gem "annotate"
+  gem "better_errors"
+  gem "binding_of_caller"
+  gem "draft_generators"
+  gem "grade_runner"
+  gem "pry-rails"
+  gem 'rails_db', '~> 2.4', '>= 2.4.4'
+  gem 'rails-erd', '~> 1.5', '>= 1.5.2'
+  gem "rufo"
+  gem "specs_to_readme"
+  gem "web_git"
+end
+
+group :development, :test do
+  gem "rspec-rails", "~> 6.0.0"
 end
