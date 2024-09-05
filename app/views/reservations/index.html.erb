@@ -1,16 +1,42 @@
-<p style="color: green"><%= notice %></p>
+<div class="container">
+  <div class="row">
+    <p style="color: green"><%= notice %></p>
+    <div class="offset-md-3 col-md-6">
+      <div class="card">
+        <div class="card-header d-flex align-items-center">
+          <h1 class="h6">All Reservations</h1>
+          <button type="button" class="ms-auto btn btn-sm btn-outline-success" data-bs-toggle="modal" data-bs-target="#newReservationModal">
+            Make a new reservation
+          </button>
+        </div>
+        <div class="list-group list-group-flush">
+          <% @reservations.each do |reservation| %>
+            <a class="d-flex list-group-item list-group-item-action" href="<%= reservation_path(reservation) %>">
+              <%= render reservation %>
+              <div class="ms-auto">
+                <svg class="svg-inline--fa fa-chevron-right" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" data-fa-i2svg="">
+                  <path fill="currentColor" d="M96 480c-8.188 0-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L242.8 256L73.38 86.63c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l192 192c12.5 12.5 12.5 32.75 0 45.25l-192 192C112.4 476.9 104.2 480 96 480z"></path>
+                </svg>
+              </div>
+            </a>
+          <% end %>
+        </div>
+        <!--list group -->
+      </div>
+    </div>
+  </div>
+</div>
 
-<h1>Reservations</h1>
-
-<button>
-  <%= link_to "New reservation", new_reservation_path %>
-</button>
-
-<div id="reservations">
-  <% @reservations.each do |reservation| %>
-    <%= render reservation %>
-    <p>
-      <%= link_to "Show this reservation", reservation %>
-    </p>
-  <% end %>
+<div class="modal fade" id="newReservationModal" tabindex="-1" aria-labelledby="newReservationModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="newReservationModalLabel">New Reservation</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <%= render 'form', reservation: @reservation || Reservation.new %> <!-- Ensure reservation is not nil -->
+      </div>
+    </div>
+  </div>
 </div>
