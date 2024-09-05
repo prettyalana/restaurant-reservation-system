@@ -1,10 +1,34 @@
-<p style="color: green"><%= notice %></p>
+<div class="card">
 
-<%= render @reservation %>
+  <p style="color: green"><%= notice %></p>
 
-<div>
-  <%= link_to "Edit this reservation", edit_reservation_path(@reservation) %> |
-  <%= link_to "Back to reservations", reservations_path %>
+  <div class="card-header">
+    <%= link_to "Reservation ##{@reservation.id}", @reservation %>
+  </div>
 
-  <%= button_to "Destroy this reservation", @reservation, method: :delete %>
+  <div class="card-body">
+    <%= render @reservation %>
+    <div class="row">
+      <div class="col">
+        <div class="d-grid">
+          <%= link_to edit_reservation_path(@reservation), class: "btn btn-outline-secondary" do  %>
+            <i class="fa-regular fa-pen-to-square"></i>
+          <% end %>
+        </div>
+      </div>
+      <div class="col">
+        <div class="d-grid">
+          <div class="btn btn-outline-secondary">
+            <%# TODO  %>
+            <%# Since there is no delete/destroy helper route link_to isn't working %>
+            <%= button_to "Delete this reservation", @reservation, method: :delete %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-footer">
+    Last updated <%= time_ago_in_words(@reservation.updated_at) %> ago
+  </div>
 </div>
