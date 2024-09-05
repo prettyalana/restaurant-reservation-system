@@ -1,6 +1,6 @@
-<%= form_with(model: reservation) do |form| %>
+<%= form_with(model: reservation, html: { class: 'container' }) do |form| %>
   <% if reservation.errors.any? %>
-    <div style="color: red">
+    <div class="alert alert-danger">
       <h2><%= pluralize(reservation.errors.count, "error") %> prohibited this reservation from being saved:</h2>
 
       <ul>
@@ -11,42 +11,46 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
-  </div>
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="form-group">
+        <%= form.label :name, class: "form-label" %>
+        <%= form.text_field :name, class: "form-control" %>
+      </div>
 
-  <div>
-    <%= form.label :description, style: "display: block" %>
-    <%= form.text_area :description %>
-  </div>
+      <div class="form-group">
+        <%= form.label :description, class: "form-label" %>
+        <%= form.text_area :description, class: "form-control" %>
+      </div>
 
-  <div>
-    <%= form.label :date, style: "display: block" %>
-    <%= form.date_field :date %>
-  </div>
+      <div class="form-group">
+        <%= form.label :date, class: "form-label" %>
+        <%= form.date_field :date, class: "form-control" %>
+      </div>
 
-  <div>
-    <%= form.label :start_time, style: "display: block" %>
-    <%= form.time_field :start_time %>
-  </div>
+      <div class="form-group">
+        <%= form.label :start_time, class: "form-label" %>
+        <%= form.time_field :start_time, class: "form-control" %>
+      </div>
 
-  <div>
-    <%= form.label :end_time, style: "display: block" %>
-    <%= form.time_field :end_time %>
-  </div>
+      <div class="form-group">
+        <%= form.label :end_time, class: "form-label" %>
+        <%= form.time_field :end_time, class: "form-control" %>
+      </div>
 
-  <div>
-    <%= form.label :party_size, style: "display: block" %>
-    <%= form.number_field :party_size %>
-  </div>
+      <div class="form-group">
+        <%= form.label :party_size, class: "form-label" %>
+        <%= form.number_field :party_size, class: "form-control" %>
+      </div>
 
-  <div>
-    <%= form.label :table_id %>
-    <%= form.collection_select :table_id, Table.all, :id, :name %>
-  </div>
+      <div class="form-group">
+        <%= form.label :table_id, class: "form-label" %>
+        <%= form.collection_select :table_id, Table.all, :id, :name, { prompt: "Select a table" }, class: "form-control" %>
+      </div>
 
-  <div>
-    <%= form.submit %>
+      <div class="form-group text-center">
+        <%= form.submit 'Submit', class: "btn btn-primary" %>
+      </div>
+    </div>
   </div>
 <% end %>

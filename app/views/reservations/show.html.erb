@@ -1,10 +1,42 @@
-<p style="color: green"><%= notice %></p>
+<div class="card">
+  <div class="card-header">
+    <%= link_to "Reservation ##{@reservation.id}", @reservation %>
+  </div>
 
-<%= render @reservation %>
+  <div class="card-body">
+    <%= render @reservation %>
+    <div class="row">
+      <div class="col">
+        <div class="d-grid">
+          <button type="button" class="ms-auto btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#editReservationModal">
+            Edit reservation
+          </button>
+        </div>
+      </div>
+      <div class="col">
+        <div class="d-grid">
+          <%= button_to "Delete this reservation", @reservation, method: :delete, class: "btn btn-outline-secondary" %>
+          <%# <i class="fa-regular fa-trash-can"></i> %>
+        </div>
+      </div>
+    </div>
+  </div>
 
-<div>
-  <%= link_to "Edit this reservation", edit_reservation_path(@reservation) %> |
-  <%= link_to "Back to reservations", reservations_path %>
+  <div class="card-footer">
+    Last updated <%= time_ago_in_words(@reservation.updated_at) %> ago
+  </div>
+</div>
 
-  <%= button_to "Destroy this reservation", @reservation, method: :delete %>
+<div class="modal fade" id="editReservationModal" tabindex="-1" aria-labelledby="editReservationModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="editReservationModalLabel">Edit Reservation</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <%= render 'form', reservation: @reservation || Reservation.edit %>
+      </div>
+    </div>
+  </div>
 </div>

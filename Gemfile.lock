@@ -158,7 +158,6 @@ GEM
       oj (~> 3.13.12)
       rake (~> 13)
       zip
-    htmlbeautifier (1.4.3)
     http (5.2.0)
       addressable (~> 2.8)
       base64 (~> 0.1)
@@ -444,7 +443,6 @@ DEPENDENCIES
   draft_generators
   faker
   grade_runner
-  htmlbeautifier
   http
   importmap-rails
   jbuilder
