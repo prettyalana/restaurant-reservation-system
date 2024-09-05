@@ -74,8 +74,6 @@ end
 gem 'rake-notes', '~> 0.2.2'
 gem "awesome_print"
 gem "faker"
-# This gem is not working
-# gem "htmlbeautifier"
 gem "http"
 gem "table_print"
 
