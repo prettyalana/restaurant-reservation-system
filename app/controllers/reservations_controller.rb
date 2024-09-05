@@ -28,7 +28,7 @@ class ReservationsController < ApplicationController
         format.html { redirect_to reservation_url(@reservation), notice: "Reservation was successfully created." }
         format.json { render :show, status: :created, location: @reservation }
       else
-        format.html { render :new, status: :unprocessable_entity }
+        format.html { render :new, alert: @reservation.errors.full_messages.join(", ") }
         format.json { render json: @reservation.errors, status: :unprocessable_entity }
       end
     end
@@ -41,7 +41,7 @@ class ReservationsController < ApplicationController
         format.html { redirect_to reservation_url(@reservation), notice: "Reservation was successfully updated." }
         format.json { render :show, status: :ok, location: @reservation }
       else
-        format.html { render :edit, status: :unprocessable_entity }
+        format.html { render :edit, alert: @reservation.errors.full_messages.join(", ") }
         format.json { render json: @reservation.errors, status: :unprocessable_entity }
       end
     end

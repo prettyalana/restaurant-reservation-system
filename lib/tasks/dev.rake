@@ -13,7 +13,7 @@ task :sample_data => :environment do
 
   12.times do
     name = Faker::Name.name.capitalize
-    party_size = rand(1..20)
+    party_size = rand(1..8)
     if party_size <= 2
       description = "Seating for #{party_size}"
     else
