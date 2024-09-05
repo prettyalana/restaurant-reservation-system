@@ -14,6 +14,11 @@
           <%= link_to edit_reservation_path(@reservation), class: "btn btn-outline-secondary" do  %>
             <i class="fa-regular fa-pen-to-square"></i>
           <% end %>
+          <%# TODO %>
+          <%# Possible solution? %>
+          <%# <button type="button" class="ms-auto btn btn-lg btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#editReservationModal">
+            Edit reservation
+          </button> %>
         </div>
       </div>
       <div class="col">
@@ -30,5 +35,19 @@
 
   <div class="card-footer">
     Last updated <%= time_ago_in_words(@reservation.updated_at) %> ago
+  </div>
+</div>
+
+<div class="modal fade" id="editReservationModal" tabindex="-1" aria-labelledby="editReservationModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="editReservationModalLabel">Edit Reservation</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <%= render 'form', reservation: @reservation || Reservation.edit %>
+      </div>
+    </div>
   </div>
 </div>
