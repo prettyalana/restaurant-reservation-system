@@ -21,3 +21,12 @@
 5. Access the application in your web browser at
 * ```http://localhost:3000```
 
+## ERD Diagrams 
+<h1 align="center">
+  <br>
+    <img src="https://github.com/prettyalana/restaurant-reservation-system/blob/main/detailed_erd.png" alt="ERD Diagram">
+    <img src="https://github.com/prettyalana/restaurant-reservation-system/blob/main/erd.png" alt="ERD Diagram">
+  <br>
+  <br>
+</h1>
+
