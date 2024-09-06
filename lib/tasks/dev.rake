@@ -23,6 +23,7 @@ task :sample_data => :environment do
     start_time = Faker::Time.between_dates(from: Date.today - 1, to: Date.today)
     end_time = start_time + 1.hour
     table = Table.order('RANDOM()').first
+    if table.available?(start_time, end_time)
     Reservation.create(
       name: name,
       description: description,
@@ -32,6 +33,7 @@ task :sample_data => :environment do
       table: table,
       party_size: party_size
     )
+    end
   end
 
   p "Created #{Reservation.all.count} reservations."

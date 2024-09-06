@@ -8,7 +8,7 @@ class Reservation < ApplicationRecord
   private
 
   def check_availability
-    unless table&.available?(start_time, end_time)
+    unless table&.available?(start_time, end_time, id)
       errors.add(:base, "The table has already been reserved. Choose another table or reserve another time.")
     end
   end
