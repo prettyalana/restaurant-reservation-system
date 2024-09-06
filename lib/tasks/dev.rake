@@ -11,8 +11,10 @@ task :sample_data => :environment do
     Table.create(seats: rand(2..8), name: "Table #{i + 1}")
   end
 
+  p "Created #{Table.count} tables."
+
   12.times do
-    name = Faker::Name.name.capitalize
+    name = Faker::Name.name.titleize
     party_size = rand(1..8)
     if party_size <= 2
       description = "Seating for #{party_size}"
@@ -20,7 +22,8 @@ task :sample_data => :environment do
       description = "Party of #{party_size}"
     end
     date = Faker::Date.between(from: 2.days.ago, to: Date.today)
-    start_time = Faker::Time.between_dates(from: Date.today - 1, to: Date.today)
+    start_time = Faker::Time.between_dates(from: Date.today - 1, to: Date.today, period: :all)
+    start_time = start_time.change(min: 0, sec: 0)
     end_time = start_time + 1.hour
     table = Table.order("RANDOM()").first
     if table.available?(start_time, end_time)
@@ -36,5 +39,5 @@ task :sample_data => :environment do
     end
   end
 
-  p "Created #{Reservation.all.count} reservations."
+  p "Created #{Reservation.count} reservations."
 end
