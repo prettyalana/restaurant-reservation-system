@@ -7,16 +7,16 @@
   <div class="card-body">
     <%= render @reservation %>
     <div class="row">
-      <div class="col">
+      <div class="col-12 col-md-6 mb-2 mb-md-0">
         <div class="d-grid">
-          <button type="button" class="ms-auto btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#editReservationModal">
+          <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#editReservationModal">
             Edit reservation
           </button>
         </div>
       </div>
-      <div class="col">
+      <div class="col-12 col-md-6 mb-2 mb-md-0">
         <div class="d-grid">
-          <%= button_to "Delete this reservation", @reservation, method: :delete, class: "btn btn-outline-secondary" %>
+          <%= button_to "Delete this reservation", @reservation, method: :delete, class: "btn btn-outline-secondary", form: { class: "d-grid" } %>
         </div>
       </div>
     </div>
