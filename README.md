@@ -14,7 +14,7 @@
 3. Set up the database:
 * ```rails db:create```
 * ```rails db:migrate```
-* Optional step: ```rails sample_data``` to generate sample data and get prepopulated tables and reservations.
+* ```rails sample_data``` to prepopulate the database with reservations and tables.
   
 4. Start the Rails server:
 * ```rails server, rails s, or bin/dev```
