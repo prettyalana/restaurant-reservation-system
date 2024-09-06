@@ -15,7 +15,7 @@ class Reservation < ApplicationRecord
 
   def check_party_size
     unless table&.can_accommodate?(party_size)
-      errors.add(:base, "Your party is too large. Choose another table.")
+      errors.add(:base, "Your party is too large.")
     end
 
     if table&.at_capacity?(party_size)
