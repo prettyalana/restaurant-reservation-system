@@ -4,6 +4,10 @@ class Reservation < ApplicationRecord
   validate :check_availability
   validate :check_party_size
 
+  def self.ransackable_attributes(auth_object= nil)
+    ["name", "date"]
+  end
+
 
   private
 

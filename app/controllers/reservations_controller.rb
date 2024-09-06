@@ -3,7 +3,9 @@ class ReservationsController < ApplicationController
 
   # GET /reservations or /reservations.json
   def index
-    @reservations = Reservation.all
+    @q = Reservation.ransack(params[:q])
+
+    @reservations = @q.result
   end
 
   # GET /reservations/1 or /reservations/1.json
