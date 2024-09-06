@@ -68,6 +68,7 @@ group :test do
   gem "webdrivers"
 end
 
+gem 'ransack'
 gem 'rake-notes', '~> 0.2.2'
 gem "awesome_print"
 gem "faker"

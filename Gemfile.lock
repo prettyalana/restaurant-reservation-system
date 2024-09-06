@@ -455,6 +455,7 @@ DEPENDENCIES
   rails-erd (~> 1.5, >= 1.5.2)
   rails_db (~> 2.4, >= 2.4.4)
   rake-notes (~> 0.2.2)
+  ransack
   redis (>= 4.0.1)
   rspec-rails (~> 6.0.0)
   rufo
