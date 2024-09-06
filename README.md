@@ -14,12 +14,14 @@
 3. Set up the database:
 * ```rails db:create```
 * ```rails db:migrate```
+* Optional step: ```rails sample_data``` to generate sample data and get prepopulated tables and reservations.
   
 4. Start the Rails server:
 * ```rails server, rails s, or bin/dev```
 
 5. Access the application in your web browser at
 * ```http://localhost:3000```
+
 
 ## ERD Diagrams 
 <h1 align="center">
