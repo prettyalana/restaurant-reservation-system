@@ -2,11 +2,6 @@ desc "Fill the database tables with some sample data"
 task :sample_data => :environment do
   p "Creating sample data"
 
-  if Rails.env.development?
-    Table.destroy_all
-    p "Database wiped"
-  end
-
   10.times do |i|
     Table.create(seats: rand(2..8), name: "Table #{i + 1}")
   end
