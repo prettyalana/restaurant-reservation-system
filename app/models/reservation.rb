@@ -23,7 +23,7 @@ class Reservation < ApplicationRecord
     end
 
     if table&.at_capacity?(party_size)
-      errors.add(:base, "The table is at its capacity. No more reservations until the reservation is over.")
+      errors.add(:base, "The table is at its capacity.")
     end
   end
 end
