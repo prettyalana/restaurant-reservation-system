@@ -36,3 +36,5 @@
 
 # Ignore the ERD PDF binary file
 erd.pdf 
+
+.DS_STORE
