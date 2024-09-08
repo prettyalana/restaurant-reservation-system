@@ -20,7 +20,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_09_04_224946) do
     t.integer "table_id"
     t.time "start_time"
     t.time "end_time"
-    t.integer "party_size"
     t.index ["table_id"], name: "index_reservations_on_table_id"
   end
 
