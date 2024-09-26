@@ -22,6 +22,8 @@
 5. Access the application in your web browser at
 * ```http://localhost:3000```
 
+## Live website 
+* https://restaurant-reservation-system-utoj.onrender.com
 
 ## ERD Diagrams 
 <h1 align="center">
