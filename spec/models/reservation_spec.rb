@@ -20,7 +20,7 @@ RSpec.describe Reservation, type: :model do
     it "shows an error when the table is not available" do
       allow(table).to receive(:at_capacity?).and_return(true)
       reservation.valid?
-      expect(reservation.errors[:base]).to include("The table is at its capacity. No more reservations until the reservation is over.")
+      expect(reservation.errors[:base]).to include("The table is at its capacity.")
     end
 
     it "shows successful reservation when the table is available" do
