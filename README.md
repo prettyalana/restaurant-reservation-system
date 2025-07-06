@@ -1,7 +1,7 @@
 # Restaurant Reservation System
 
 ## Ruby Version
-* ruby 3.2.1
+* ruby 3.4.2
 
 ## Installation
 
