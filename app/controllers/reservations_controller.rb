@@ -5,7 +5,7 @@ class ReservationsController < ApplicationController
   def index
     @q = Reservation.ransack(params[:q])
 
-    @reservations = @q.result
+    @reservations = @q.result.order(date: :desc, start_time: :asc)
   end
 
   # GET /reservations/1 or /reservations/1.json
